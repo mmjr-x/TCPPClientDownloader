@@ -3,11 +3,11 @@ mkdir ClientCreator
 cd ClientCreator
 
 echo "Downloading dependencies..."
-wget https://raw.githubusercontent.com/Geigerkind/ClientDownloader/main/ClientDownloader.sh
-# TODO: Put it in some Repo
-cp ../../client/connection_patcher .
-cp ../../client/WoWRegeneration.exe .
-cp -r ../../client/WTF .
+wget https://raw.githubusercontent.com/Geigerkind/TCPPClientDownloader/master/ClientDownloader.sh
+wget https://github.com/Geigerkind/TCPPClientDownloader/raw/master/WoWRegeneration.exe
+wget https://github.com/Geigerkind/TCPPClientDownloader/raw/master/WTF.zip
+unzip WTF.zip
+rm WTF.zip
 
 echo "Downloading client..."
 bash ClientDownloader.sh
@@ -18,10 +18,9 @@ mv WoWRegeneration.exe wow434
 mv WTF wow434
 
 cd wow434
-#wine WoWRegeneration.exe
-#mv WoW-15595/Data .
-#rm -r WoW-15595
-cp -r ../../../wowregen/WoW-15595/Data .
+wine WoWRegeneration.exe
+mv WoW-15595/Data .
+rm -rf WoW-15595
 rm WoWRegeneration.exe
 
 echo "Patching clients..."
