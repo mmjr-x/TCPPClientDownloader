@@ -25,14 +25,20 @@ rm -r WoW-15595
 rm WoWRegeneration.exe
 
 echo "Patching clients..."
+echo "HIT ENTER AFTER IT SAID SUCCESS!"
 .\connection_patcher.exe Wow.exe
 .\connection_patcher.exe Wow-64.exe
+rm connection_patcher.exe
+
+rm Wow.exe
+rm Wow-64.exe
+rm Battle.net.dll
+rm Battle.net-64.dll
+
 mv Wow_Patched.exe Wow.exe
 mv Battle.net_Patched.dll Battle.net.dll
 mv Wow-64_Patched.exe Wow-64.exe
 mv Battle.net-64_Patched.dll Battle.net-64.dll
-
-rm connection_patcher.exe
 
 echo "Cleaning up..."
 cd ../../
