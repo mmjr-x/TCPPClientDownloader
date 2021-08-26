@@ -17,5 +17,6 @@ Invoke-Webrequest ${HOST_URL}E/1/E198F00FE056B24ED58B36E1C6A048F4 -Outfile "Repa
 Invoke-Webrequest http://eu.media.battle.net.edgesuite.net/downloads/wow-installers/live/WoWLive-64-Win-15595.zip -Outfile "WoWLive-64-Win-15595.zip"
 Expand-Archive -LiteralPath "WoWLive-64-Win-15595.zip" -DestinationPath ./
 rm WoWLive-64-Win-15595.zip
+cd ../
 
 echo "Done!"

@@ -12,4 +12,6 @@ Run it on your own risk!
 3. Run `bash ClientCreator.sh`
 
 ### Windows 10
-1. Run `ClientCreator.ps1` with the `PowerShell`.
+1. Make sure `Visual C++ Redistributable is installed` (https://aka.ms/vs/16/release/vc_redist.x64.exe).
+2. Make sure `OpenSSL` is installed (https://slproweb.com/download/Win64OpenSSL-1_1_1L.exe).
+3. Run `ClientCreator.ps1` with the `PowerShell`.

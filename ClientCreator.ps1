@@ -11,7 +11,7 @@ Expand-Archive -LiteralPath WTF.zip -DestinationPath ./
 rm WTF.zip
 
 echo "Downloading client..."
-& ClientDownloader.ps1
+.\ClientDownloader.ps1
 rm ClientDownloader.ps1
 
 mv connection_patcher.exe wow434
