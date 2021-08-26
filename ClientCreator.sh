@@ -5,6 +5,7 @@ cd ClientCreator
 echo "Downloading dependencies..."
 wget https://raw.githubusercontent.com/Geigerkind/TCPPClientDownloader/master/ClientDownloader.sh
 wget https://github.com/Geigerkind/TCPPClientDownloader/raw/master/WoWRegeneration.exe
+wget https://github.com/Geigerkind/TCPPClientDownloader/raw/master/connection_patcher
 wget https://github.com/Geigerkind/TCPPClientDownloader/raw/master/WTF.zip
 unzip WTF.zip
 rm WTF.zip
@@ -24,6 +25,7 @@ rm -rf WoW-15595
 rm WoWRegeneration.exe
 
 echo "Patching clients..."
+chmod +x ./connection_patcher
 ./connection_patcher Wow.exe
 ./connection_patcher Wow-64.exe
 mv Wow_Patched.exe Wow.exe
