@@ -36,6 +36,7 @@ cd wow434
 # .\WoWRegeneration.exe
 # $process = Start-Process -FilePath ".\WoWRegeneration.exe" -PassThru -RedirectStandardInput $true
 
+# Adapted from by https://stackoverflow.com/a/16100200/13620003
 $psi = New-Object System.Diagnostics.ProcessStartInfo;
 $psi.FileName = ".\ClientCreator\wow434\WoWRegeneration.exe"; #process file
 $psi.WorkingDirectory = ".\ClientCreator\wow434"
