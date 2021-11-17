@@ -1,6 +1,17 @@
 # Exit the script when there is a error
 $ErrorActionPreference = "Stop"
 
+echo "Installing prerequisites..."
+If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
+{    
+  Write-Warning "This script needs to be run As Admin to install all dependencies!"
+  read-host "If you are sure you want to continue, ENTER to confirm..."
+} else {
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+  refreshenv
+  choco install vcredist-all openssl -y
+}
+
 echo "Starting..."
 mkdir ClientCreator
 cd ClientCreator
